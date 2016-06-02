@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="formFill">
+<head>
+	<title>Angular example</title>
+</head>
+<body ng-controller="info">
+<div>
+	<ul>
+		<li ng-repeat="user in users | orderBy: Balance">
+			{{user.name}} - {{user.Balance | currency}}
+			<a href="" ng-click="edit(user)">Edit information</a>
+		</li>
+		<li>
+			<input type="text" id="fullName" ng-model="current.name" value="{{current.name}}">
+			<input type="text" id="fullName" ng-model="current.Balance" value="{{current.Balance}}">
+		</li>
+		<li><a href="" ng-click="save(current)">Save information</a></li>
+	</ul>
+</div>
+<button ng-click="addNew(current)">Add user</button>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
